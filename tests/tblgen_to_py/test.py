@@ -11,26 +11,31 @@ from xdsl.ir import *
 from xdsl.irdl import *
 
 
+# +
 @irdl_attr_definition
 class Test_SingletonAType(ParametrizedAttribute, TypeAttribute):
     name = "test.singleton_a"
 
 
+# +
 @irdl_attr_definition
 class Test_SingletonBType(ParametrizedAttribute, TypeAttribute):
     name = "test.singleton_b"
 
 
+# +
 @irdl_attr_definition
 class Test_SingletonCType(ParametrizedAttribute, TypeAttribute):
     name = "test.singleton_c"
 
 
+# +
 @irdl_attr_definition
 class Test_TestAttr(ParametrizedAttribute):
     name = "test.test"
 
 
+# +
 @irdl_op_definition
 class Test_AndOp(IRDLOperation):
     name = "test.and"
@@ -38,6 +43,7 @@ class Test_AndOp(IRDLOperation):
     in_ = operand_def(AllOf((BaseAttr(Test_SingletonAType), AnyAttr())))
 
 
+# +
 @irdl_op_definition
 class Test_AnyOp(IRDLOperation):
     name = "test.any"
@@ -45,6 +51,7 @@ class Test_AnyOp(IRDLOperation):
     in_ = operand_def(AnyAttr())
 
 
+# +
 @irdl_op_definition
 class Test_AttributesOp(IRDLOperation):
     name = "test.attributes"
@@ -54,6 +61,7 @@ class Test_AttributesOp(IRDLOperation):
     in_ = prop_def(BaseAttr(Test_TestAttr), prop_name="in")
 
 
+# +
 @irdl_op_definition
 class Test_ConfinedOp(IRDLOperation):
     name = "test.confined"
@@ -63,6 +71,7 @@ class Test_ConfinedOp(IRDLOperation):
     vector = operand_def(AnyAttr())
 
 
+# +
 @irdl_op_definition
 class Test_Integers(IRDLOperation):
     name = "test.integers"
@@ -77,6 +86,7 @@ class Test_Integers(IRDLOperation):
     any_integer = operand_def(BaseAttr(IntegerType))
 
 
+# +
 @irdl_op_definition
 class Test_OrOp(IRDLOperation):
     name = "test.or"
